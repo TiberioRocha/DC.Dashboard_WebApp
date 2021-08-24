@@ -125,8 +125,8 @@ def data_map(data):
 
 
 if __name__ == '__main__':
-    path = r'C:\Users\Lucas\Downloads\Report_Total3.xls'
-    path_label = r'C:\Users\Lucas\Downloads\Ranking_Label.xlsx'
+    path = r'TiberioRocha/DC.Dashboard_WebApp/Report_Total3.xls'
+    path_label = r'TiberioRocha/DC.Dashboard_WebApp/Ranking_Label.xlsx'
     data = get_data(path)
     data_label = get_data(path_label)
     overview_data(data)
