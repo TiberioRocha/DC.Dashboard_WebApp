@@ -27,6 +27,10 @@ def get_data(path_label):
     data_label = pd.read_excel(path_label)
     return data_label
 
+def get_data(path_gut):
+    data_gut = pd.read_excel(path_gut)
+    return data_gut
+
 def overview_data(data):
     f_action = st.sidebar.multiselect('Enter Action', data['Action'].unique())
     f_atributes = st.sidebar.multiselect('Enter Columns', data.columns)
@@ -61,6 +65,8 @@ def overview_data(data):
     st.dataframe(df1, height=600)
     st.title('--------------Citizen Label--------------')
     st.dataframe(data_label, height=600)
+    st.title('--------------------GUT Matrix--------------------')
+    st.dataframe(data_gut, height=300)
 
     return None
 
@@ -127,8 +133,10 @@ def data_map(data):
 if __name__ == '__main__':
     path = r'Report_Total3.xls'
     path_label = r'Ranking_Label.xlsx'
+    path_gut = r'GUT.xlsx'
     data = get_data(path)
     data_label = get_data(path_label)
+    data_gut = get_data(path_gut)
     overview_data(data)
     portfolio_density(data)
     data_map(data)
